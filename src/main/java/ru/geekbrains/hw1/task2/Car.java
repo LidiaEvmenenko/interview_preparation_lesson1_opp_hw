@@ -1,17 +1,17 @@
 package ru.geekbrains.hw1.task2;
 
 abstract class Car {
-    public Engine engine;
-    private String color;
-    private String name;
-    protected void start() {
-        System.out.println("Car starting");
-    }
+    protected IEngine engine;
+    protected String color;
+    protected String name;
+
+
     abstract void open();
-    public Engine getEngine() {
+
+    public IEngine getEngine() {
         return engine;
     }
-    public void setEngine(Engine engine) {
+    public void setEngine(IEngine engine) {
         this.engine = engine;
     }
     public String getColor() {
@@ -25,5 +25,9 @@ abstract class Car {
     }
     public void setName(String name) {
         this.name = name;
+    }
+    @Override
+    public String toString() {
+        return String.format("Car{engine=%s, color='%s', name='%s'}", engine.startEngine(), color, name);
     }
 }
